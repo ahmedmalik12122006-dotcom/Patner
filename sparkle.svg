@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <radialGradient id="sparkleGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="60%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </radialGradient>
+  </defs>
+  <!-- Main Star Sparkle -->
+  <path d="M 50 5 Q 50 50 95 50 Q 50 50 50 95 Q 50 50 5 50 Q 50 50 50 5 Z" fill="url(#sparkleGrad)"/>
+  <!-- Mini secondary sparkles -->
+  <path d="M 80 15 Q 80 25 90 25 Q 80 25 80 35 Q 80 25 70 25 Q 80 25 80 15 Z" fill="#fde047" opacity="0.8"/>
+  <path d="M 20 75 Q 20 83 28 83 Q 20 83 20 91 Q 20 83 12 83 Q 20 83 20 75 Z" fill="#fde047" opacity="0.8"/>
+</svg>

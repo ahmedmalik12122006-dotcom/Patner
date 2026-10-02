@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd1dc"/>
+      <stop offset="50%" stop-color="#ffe6eb"/>
+      <stop offset="100%" stop-color="#fbcfe8"/>
+    </linearGradient>
+    <linearGradient id="cupGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff758f"/>
+      <stop offset="100%" stop-color="#c9184a"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" rx="24" fill="url(#skyGrad)" />
+  
+  <!-- Decorative background circles -->
+  <circle cx="100" cy="120" r="60" fill="#fff" opacity="0.4" />
+  <circle cx="500" cy="480" r="90" fill="#fff" opacity="0.35" />
+  <circle cx="480" cy="140" r="40" fill="#f472b6" opacity="0.2" />
+
+  <!-- Cute Coffee Cups Toasting -->
+  <g transform="translate(180, 200)">
+    <!-- Cup 1 (Left) -->
+    <g transform="rotate(-8 100 150)">
+      <path d="M 60 100 L 70 210 Q 110 230 150 210 L 160 100 Z" fill="url(#cupGrad)" />
+      <ellipse cx="110" cy="100" rx="50" ry="12" fill="#fff0f5" />
+      <ellipse cx="110" cy="100" rx="42" ry="9" fill="#6f4e37" />
+      <!-- Latte art heart -->
+      <path d="M 110 100 C 110 95 102 92 102 97 C 102 101 110 106 110 106 C 110 106 118 101 118 97 C 118 92 110 95 110 100 Z" fill="#fff0f5"/>
+      <!-- Cup handle -->
+      <path d="M 58 120 C 30 125 30 175 68 180" stroke="#ff758f" stroke-width="12" stroke-linecap="round" fill="none" />
+      <!-- Cute Smiley on cup -->
+      <circle cx="95" cy="160" r="4" fill="#fff" />
+      <circle cx="125" cy="160" r="4" fill="#fff" />
+      <path d="M 105 170 Q 110 176 115 170" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none" />
+    </g>
+
+    <!-- Steam -->
+    <path d="M 140 70 Q 130 50 140 30" stroke="#ff758f" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <path d="M 160 80 Q 170 60 160 40" stroke="#ff8fa3" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.7"/>
+  </g>
+
+  <!-- Cute Sparkles & Hearts -->
+  <path d="M 300 120 C 300 105 270 100 270 125 C 270 145 300 165 300 165 C 300 165 330 145 330 125 C 330 100 300 105 300 120 Z" fill="#ff4d6d" opacity="0.85"/>
+  <circle cx="120" cy="450" r="8" fill="#ffd166"/>
+  <circle cx="480" cy="280" r="10" fill="#ffd166"/>
+  
+  <text x="300" y="520" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="28" fill="#590d22" text-anchor="middle">
+    ☕ Coffee &amp; Unlimited Talks
+  </text>
+  <text x="300" y="555" font-family="'Caveat', cursive, sans-serif" font-weight="600" font-size="24" fill="#800f2f" text-anchor="middle">
+    "Why are we always laughing at nothing? 😭"
+  </text>
+</svg>

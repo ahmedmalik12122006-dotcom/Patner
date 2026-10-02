@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" width="100%" height="100%">
+  <!-- Bow knot -->
+  <path d="M 50 40 C 20 15 10 55 45 45 Z" fill="#ff4d6d" />
+  <path d="M 50 40 C 25 22 18 50 46 43 Z" fill="#ff758f" />
+  <path d="M 50 40 C 80 15 90 55 55 45 Z" fill="#ff4d6d" />
+  <path d="M 50 40 C 75 22 82 50 54 43 Z" fill="#ff758f" />
+  <circle cx="50" cy="42" r="8" fill="#fff0f5" />
+  <circle cx="50" cy="42" r="6" fill="#ff4d6d" />
+  <!-- Bow ribbons -->
+  <path d="M 46 45 C 38 65 30 75 35 78 C 40 75 46 65 48 48" fill="#ff4d6d"/>
+  <path d="M 54 45 C 62 65 70 75 65 78 C 60 75 54 65 52 48" fill="#ff4d6d"/>
+</svg>

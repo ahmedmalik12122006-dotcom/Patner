@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Partner's Little Corner 💗</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎀</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient Glowing Background Orbs & Star Field for Night Mode -->
+  <div class="bg-mesh-glow">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+    <div class="night-stars-layer" id="night-stars-layer"></div>
+  </div>
+
+  <!-- Interactive Floating Mascot Companion in Corner -->
+  <div id="corner-mascot" class="corner-mascot-pet" title="Click to poke me! 🎀">
+    <div id="corner-mascot-bubble" class="corner-mascot-bubble">
+      Hey Partner! Don't click the red button... 👀
+    </div>
+    <div class="corner-mascot-img-wrap anim-float">
+      <img src="avatar-mascot.svg" alt="Cute Partner Mascot Pet" />
+      <span class="corner-pet-heart">💖</span>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       1. WELCOME SCREEN OVERLAY
+       ========================================================================= -->
+  <div id="welcome-overlay" class="welcome-overlay">
+    <div class="welcome-card anim-pop">
+      <img src="bow.svg" alt="Bow" class="welcome-sticker-1 anim-float" />
+      <img src="sparkle.svg" alt="Sparkle" class="welcome-sticker-2 anim-float-rev" />
+      
+      <div class="welcome-mascot-badge">
+        <img src="avatar-mascot.svg" alt="Cute Partner Mascot" style="width: 100%; height: 100%;" />
+      </div>
+
+      <h1 id="welcome-title" class="welcome-title">Welcome to Your Little Corner 💗</h1>
+      <p id="welcome-subtitle" class="welcome-subtitle">
+        Warning: this website contains maximum cuteness, severe teasing, and zero boring reading!
+      </p>
+
+      <button id="welcome-enter-btn" class="btn btn-primary anim-pulse">
+        Enter The Chaos ✨
+      </button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FLOATING NAVIGATION BAR & MUSIC JUKEBOX
+       ========================================================================= -->
+  <header class="navbar-wrapper">
+    <nav class="navbar">
+      <a href="#hero" class="nav-brand">
+        <span>🎀</span>
+        <span>Partner's Corner</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#photos" class="nav-link">Photos</a></li>
+        <li><a href="#funny" class="nav-link">Facts About U</a></li>
+        <li><a href="#random-btn" class="nav-link">🚨 Forbidden</a></li>
+        <li><a href="#arcade" class="nav-link">🎮 Game</a></li>
+        <li><a href="#tease-scanner" class="nav-link">🔍 Scanner</a></li>
+        <li><a href="#chaos-studio" class="nav-link">🎡 Wheel</a></li>
+        <li><a href="#awards" class="nav-link">🏆 Awards</a></li>
+      </ul>
+
+      <!-- Navbar Action Controls -->
+      <div class="nav-actions">
+        <!-- Day / Night Mode Toggle Button -->
+        <button id="theme-toggle-btn" class="icon-btn theme-toggle-btn" title="Switch Day / Night Mode">
+          <span id="theme-icon">🌙</span>
+        </button>
+
+        <!-- Background Music Jukebox Trigger -->
+        <button id="music-toggle-btn" class="icon-btn music-btn-wrap" title="Toggle Upbeat Music">
+          <span id="music-icon">🎵</span>
+          <div class="mini-visualizer" id="mini-visualizer">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+          </div>
+        </button>
+
+        <!-- SFX Mute/Unmute -->
+        <button id="sfx-toggle-btn" class="icon-btn" title="Mute/Unmute Sound FX">
+          <span>🔔</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="nav-hamburger" class="nav-hamburger" aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Floating Jukebox Mini Player Bar -->
+  <div id="floating-jukebox" class="floating-jukebox">
+    <div class="jukebox-info">
+      <span class="jukebox-icon anim-spin-slow">💿</span>
+      <div class="jukebox-text">
+        <span class="jukebox-label">Now Playing:</span>
+        <span id="jukebox-track-name" class="jukebox-title">Pastel Pop Bop 🎀</span>
+      </div>
+    </div>
+    <div class="jukebox-controls">
+      <button id="jukebox-prev-btn" class="jukebox-btn" title="Previous Track">⏮️</button>
+      <button id="jukebox-play-btn" class="jukebox-btn jukebox-play-btn" title="Play/Pause">▶️</button>
+      <button id="jukebox-next-btn" class="jukebox-btn" title="Next Track">⏭️</button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Slide-down Drawer -->
+  <div id="mobile-drawer" class="mobile-nav-drawer">
+    <a href="#hero" class="nav-link">🎀 Home</a>
+    <a href="#photos" class="nav-link">📸 Photo Scrapbook</a>
+    <a href="#funny" class="nav-link">🌸 Facts About U</a>
+    <a href="#random-btn" class="nav-link">🚨 Forbidden Button</a>
+    <a href="#arcade" class="nav-link">🎮 Boba Arcade Game</a>
+    <a href="#tease-scanner" class="nav-link">🔍 Lie Detector & Scanner</a>
+    <a href="#chaos-studio" class="nav-link">🎡 Wheel of Shenanigans</a>
+    <a href="#awards" class="nav-link">🏆 Hall of Fame</a>
+    <a href="#fate" class="nav-link">🔮 Choose Your Fate</a>
+    <div class="mobile-drawer-actions">
+      <button id="mobile-theme-btn" class="btn btn-secondary" style="width: 100%;">
+        🌙 Switch to Night Mode
+      </button>
+      <button id="mobile-music-btn" class="btn btn-secondary" style="width: 100%;">
+        🎵 Toggle Music
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         2. HERO SECTION
+         ========================================================================= -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Text Column -->
+          <div class="hero-text-col reveal">
+            <div class="hero-badge">
+              <span>💌</span>
+              <span>Certified Special Delivery</span>
+            </div>
+            <h1 id="hero-heading" class="hero-heading">
+              Hey, <span class="text-gradient">Partner!</span> 🎀
+            </h1>
+            <p id="hero-desc" class="hero-desc">
+              Someone made an entire interactive website just to tease you, appreciate you, and celebrate your signature chaos.
+            </p>
+            <div class="hero-cta-group">
+              <a href="#photos" id="hero-explore-btn" class="btn btn-primary anim-pulse">
+                Explore The Fun 👀
+              </a>
+            </div>
+          </div>
+
+          <!-- Mascot & Cute Illustration Column -->
+          <div class="hero-visual-col reveal">
+            <div class="hero-mascot-wrapper" id="hero-mascot-interactive">
+              <img src="avatar-mascot.svg" alt="Partner Cute Mascot" class="hero-mascot-img anim-float" />
+              
+              <!-- Floating aesthetic stickers around mascot -->
+              <img src="bow.svg" alt="Bow" class="floating-sticker sticker-bow anim-float" />
+              <img src="heart.svg" alt="Heart" class="floating-sticker sticker-heart anim-float-rev" />
+              <img src="star.svg" alt="Star" class="floating-sticker sticker-star anim-float" />
+              <img src="sparkle.svg" alt="Sparkle" class="floating-sticker sticker-sparkle anim-float-rev" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. PHOTO SCRAPBOOK 📸
+         ========================================================================= -->
+    <section id="photos" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-badge">
+            <span>📸</span>
+            <span>Digital Scrapbook</span>
+          </div>
+          <h2 class="section-title">The Photo Gallery</h2>
+          <p class="section-subtitle">
+            A small collection of certified moments, cute vibes, and pure photographic evidence. Tap any picture to inspect!
+          </p>
+        </div>
+
+        <!-- Polaroid Scrapbook Grid -->
+        <div id="scrapbook-grid" class="scrapbook-grid">
+          <!-- Dynamically populated from CONFIG.scrapbook -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. FACTS ABOUT U 🌸
+         ========================================================================= -->
+    <section id="funny" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-badge">
+            <span>🌸</span>
+            <span>100% Certified Facts</span>
+          </div>
+          <h2 class="section-title">Facts About U</h2>
+          <p class="section-subtitle">
+            Tap each card to reveal the undisputed truth behind your signature chaos & aura.
+          </p>
+        </div>
+
+        <!-- 3D Flip Cards Grid -->
+        <div id="funny-cards-grid" class="flip-card-grid">
+          <!-- Dynamically populated from CONFIG.funnyThings -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. FORBIDDEN BUTTON & PARTNER LETTER 🚨💌
+         ========================================================================= -->
+    <section id="random-btn" class="section">
+      <div class="container">
+        <div class="random-box reveal">
+          <div class="warning-tape-border"></div>
+
+          <div class="section-badge" style="margin-top: 10px;">
+            <span>🚨</span>
+            <span>Extremely Hazardous Curiosity</span>
+          </div>
+
+          <h2 class="section-title">The Forbidden Button 🚨</h2>
+          <p class="section-subtitle">
+            I specifically wrapped this in hazard tape. You are strictly instructed: <strong>DO NOT PRESS</strong>.
+          </p>
+
+          <div class="forbidden-btn-wrapper">
+            <button id="forbidden-btn" class="btn-forbidden anim-pulse">
+              <span>DO NOT PRESS 🚨</span>
+            </button>
+          </div>
+
+          <div class="random-message-card">
+            <p id="random-message-text" class="random-message-text">
+              Go on... test your willpower. If you dare touch it, you're exposing yourself. 👀
+            </p>
+          </div>
+
+          <div id="click-counter-badge" class="click-counter-badge">
+            Warning ignored: 0 times! 🚨
+          </div>
+
+          <div style="margin-top: 18px;">
+            <button id="reopen-letter-btn" class="btn btn-secondary" style="display: none; font-size: 0.95rem; padding: 10px 24px;">
+              💌 Re-Read Partner Letter
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. MINI GAME: CATCH THE BOBA & DODGE THE CHAOS 🎮🧋
+         ========================================================================= -->
+    <section id="arcade" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-badge">
+            <span>🎮</span>
+            <span>Interactive Arcade Game</span>
+          </div>
+          <h2 class="section-title">Catch The Boba & Treats! 🧋⚡</h2>
+          <p class="section-subtitle">
+            No boring reading! Tap the yummy treats & hearts before they vanish, but dodge the drama alarms!
+          </p>
+        </div>
+
+        <div class="arcade-wrapper reveal">
+          <!-- Game Start / Dashboard Screen -->
+          <div id="arcade-dashboard" class="arcade-card">
+            <div class="arcade-hud">
+              <div class="hud-item hud-score">
+                <span class="hud-label">Score:</span>
+                <span id="game-score-display" class="hud-val">0</span>
+              </div>
+              <div class="hud-item hud-combo">
+                <span class="hud-label">Combo:</span>
+                <span id="game-combo-display" class="hud-val">x0</span>
+              </div>
+              <div class="hud-item hud-timer">
+                <span class="hud-label">Time:</span>
+                <span id="game-timer-display" class="hud-val">25s</span>
+              </div>
+            </div>
+
+            <!-- Arcade Play Stage Area -->
+            <div id="arcade-stage" class="arcade-stage">
+              <!-- Start Screen Inside Stage -->
+              <div id="arcade-start-overlay" class="arcade-overlay-screen">
+                <div class="arcade-mascot-preview">
+                  <span style="font-size: 4rem;">🧋✨</span>
+                </div>
+                <h3 class="arcade-stage-title">Boba & Treat Tap Frenzy!</h3>
+                <p class="arcade-stage-desc">
+                  Catch 🧋 Boba (+10), 🎀 Bows (+15), 💖 Hearts (+25), 🍟 Fries (+20), and 👑 Crowns (+50)!<br />
+                  Watch out for 🚨 Drama & ⏰ Alarms (they subtract points)!
+                </p>
+                <button id="start-game-btn" class="btn btn-primary anim-pulse" style="font-size: 1.25rem; padding: 16px 36px;">
+                  Start Playing 🎮
+                </button>
+              </div>
+
+              <!-- Game Over / Results Screen -->
+              <div id="arcade-result-overlay" class="arcade-overlay-screen" style="display: none;">
+                <div id="arcade-result-rank-icon" class="result-badge-icon">👑</div>
+                <div id="arcade-result-rank-badge" class="result-tag">RANK SSS</div>
+                <h3 id="arcade-result-rank-title" class="result-title">Grandmaster of Boba 🧋</h3>
+                <p id="arcade-final-score-text" style="font-size: 1.3rem; font-weight: 700; color: var(--pink-deep); margin-bottom: 8px;">Final Score: 0 pts</p>
+                <p id="arcade-result-rank-desc" class="result-desc">Reflex analysis loading...</p>
+                <button id="restart-game-btn" class="btn btn-primary">
+                  Play Again 🔄
+                </button>
+              </div>
+
+              <!-- Target items container -->
+              <div id="arcade-spawn-container" class="arcade-spawn-container"></div>
+            </div>
+
+            <!-- Live Combo Commentary -->
+            <div id="arcade-commentary" class="arcade-commentary">
+              Tap items as fast as you can! ⚡
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. LIE DETECTOR & TEASE-O-METER 🔍🤖
+         ========================================================================= -->
+    <section id="tease-scanner" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-badge">
+            <span>🔍</span>
+            <span>100% Scientifically Questionable</span>
+          </div>
+          <h2 class="section-title">The Partner Lie Detector & Tease-O-Meter</h2>
+          <p class="section-subtitle">
+            Hold your finger on the biometric scanner below to analyze your current chaos levels, drama radar, and hidden partner truths!
+          </p>
+        </div>
+
+        <div class="tease-scanner-grid">
+          <!-- 1. Biometric Touch Scanner Box -->
+          <div class="scanner-card reveal">
+            <h3 style="font-size: 1.4rem; color: var(--text-main); margin-bottom: 12px;">Biometric Partner Scanner 🧬</h3>
+            <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 24px;">
+              Press and hold the thumbprint to run a full diagnostic scan:
+            </p>
+
+            <div class="scanner-touch-wrapper">
+              <div id="biometric-scanner-pad" class="scanner-touch-pad">
+                <div class="laser-scanner-line" id="laser-line"></div>
+                <span class="scanner-icon">👆</span>
+                <span class="scanner-label" id="scanner-btn-label">HOLD TO SCAN</span>
+              </div>
+            </div>
+
+            <!-- Dynamic Vitals Bars -->
+            <div id="scanner-results-box" class="scanner-results-box">
+              <div class="scanner-placeholder-text">
+                Waiting for partner thumbprint... 🔍
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Excuse Generator Soundboard & Scratch Cards -->
+          <div class="interactive-tease-col reveal">
+            <!-- Excuse Generator Soundboard -->
+            <div class="soundboard-card">
+              <h3 style="font-size: 1.3rem; margin-bottom: 14px; color: var(--text-main);">
+                Partner Excuse Generator 🔊
+              </h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">
+                Tap any certified excuse to replay your signature arguments:
+              </p>
+              <div id="soundboard-grid" class="soundboard-grid">
+                <!-- Populated via script -->
+              </div>
+              <div id="soundboard-speech-bubble" class="soundboard-speech-bubble">
+                Tap an excuse above! 💬
+              </div>
+            </div>
+
+            <!-- Scratch Cards -->
+            <div class="scratch-card-wrapper">
+              <h3 style="font-size: 1.3rem; margin-bottom: 12px; color: var(--text-main);">
+                Scratch & Win Partner Secrets 🎁
+              </h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 14px;">
+                Scratch off the glitter layer with your mouse/touch to reveal hidden roasts & perks:
+              </p>
+              <div id="scratch-cards-container" class="scratch-cards-container">
+                <!-- Scratch cards rendered here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         8. WHEEL OF SHENANIGANS 🎡 (Featured Centerpiece)
+         ========================================================================= -->
+    <section id="chaos-studio" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-badge">
+            <span>🎡</span>
+            <span>Interactive Shenanigans</span>
+          </div>
+          <h2 class="section-title">The Wheel of Shenanigans 🎡</h2>
+          <p class="section-subtitle">
+            No boring reading! Spin the wheel to receive your comedic partner dare, perks, and cosmic prophecies!
+          </p>
+        </div>
+
+        <div class="wheel-single-wrapper reveal">
+          <div class="wheel-box-card">
+            <h3 style="font-size: 1.6rem; margin-bottom: 8px; color: var(--text-main);">The Wheel of Destiny 🎡</h3>
+            <p style="font-size: 0.96rem; color: var(--text-muted); margin-bottom: 24px;">
+              Give it a spin to see what fate (and your partner) demands of you!
+            </p>
+
+            <div class="wheel-stage">
+              <div class="wheel-pointer">🔻</div>
+              <canvas id="shenanigans-wheel-canvas" width="340" height="340" class="wheel-canvas"></canvas>
+            </div>
+
+            <div style="margin-top: 24px;">
+              <button id="spin-wheel-btn" class="btn btn-primary anim-pulse" style="font-size: 1.2rem; padding: 16px 36px;">
+                SPIN THE WHEEL 🎯
+              </button>
+            </div>
+
+            <div id="wheel-outcome-card" class="wheel-outcome-card">
+              Ready to spin! 🎡
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         9. PARTNER AWARDS 🏆
+         ========================================================================= -->
+    <section id="awards" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-badge">
+            <span>🏆</span>
+            <span>Official Certificates</span>
+          </div>
+          <h2 class="section-title">The Partner Hall of Fame</h2>
+          <p class="section-subtitle">
+            Honoring your unmatched contributions to randomness, late-night talks, and elite humor.
+          </p>
+        </div>
+
+        <!-- Awards Grid -->
+        <div id="awards-grid" class="awards-grid">
+          <!-- Dynamically populated from CONFIG.awards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         10. CHOOSE YOUR FATE 🔮
+         ========================================================================= -->
+    <section id="fate" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-badge">
+            <span>🔮</span>
+            <span>Cosmic Prophecy</span>
+          </div>
+          <h2 class="section-title">Choose Your Fate 👀</h2>
+          <p class="section-subtitle">
+            Pick one of the 3 mystical choices below to unlock your personalized comedic prophecy!
+          </p>
+        </div>
+
+        <!-- Fate Grid -->
+        <div id="fate-options-grid" class="fate-grid">
+          <!-- Dynamically populated from CONFIG.fateOptions -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         11. FINAL SECTION
+         ========================================================================= -->
+    <section class="final-section">
+      <div class="container">
+        <div class="final-box reveal">
+          <img src="avatar-mascot.svg" alt="Mascot" style="width: 70px; height: 70px; margin-bottom: 16px;" />
+          <h2 id="final-heading" class="final-heading">That's All... For Now 👀</h2>
+          <p id="final-subtext" class="final-subtext">
+            Thanks for exploring this little corner of the internet made just for you.
+          </p>
+          <button id="start-again-btn" class="btn btn-primary">
+            Back to Top 🔄
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <p id="site-footer-text">Made with 💖, endless laughter, and a little too much pink.</p>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODALS & LIGHTBOXES
+       ========================================================================= -->
+
+  <!-- Lightbox Modal for Photo Scrapbook -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-content">
+      <button id="lightbox-close-btn" class="lightbox-close-btn" aria-label="Close Lightbox">✕</button>
+      <div class="lightbox-img-box">
+        <img id="lightbox-img" src="" alt="Memory Photo" />
+      </div>
+      <h3 id="lightbox-caption" class="lightbox-caption">Caption loading...</h3>
+      <div style="display: flex; justify-content: center; gap: 10px; align-items: center;">
+        <span id="lightbox-tag" class="lightbox-tag">Tag</span>
+        <span id="lightbox-date" style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Date</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fate Reveal Modal -->
+  <div id="fate-modal" class="lightbox-modal">
+    <div class="lightbox-content" style="max-width: 480px;">
+      <button id="fate-modal-close" class="lightbox-close-btn" aria-label="Close Modal">✕</button>
+      <div id="fate-modal-symbol" style="font-size: 3.5rem; margin-bottom: 10px;">🔮</div>
+      <h3 style="font-size: 1.8rem; color: var(--pink-deep); margin-bottom: 16px;">Your Cosmic Fate Revealed!</h3>
+      <div style="background: #fff0f5; padding: 20px; border-radius: var(--radius-md); border: 1.5px dashed var(--pink-soft); margin-bottom: 10px;">
+        <p id="fate-modal-fortune" style="font-size: 1.15rem; font-weight: 600; color: var(--text-main); line-height: 1.6;">Fortune loading...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FORBIDDEN PARTNER LETTER MODAL 🚨💌
+       ========================================================================= -->
+  <div id="forbidden-letter-modal" class="lightbox-modal">
+    <div class="forbidden-letter-card anim-pop">
+      <button id="letter-modal-close" class="lightbox-close-btn" aria-label="Close Letter">✕</button>
+      
+      <!-- Top Alert Siren Banner -->
+      <div class="letter-siren-header">
+        <span class="siren-emoji anim-shake">🚨</span>
+        <span class="letter-alert-badge" id="letter-alert-badge">🚨 SIREN ALERT: CAUGHT IN 4K!</span>
+        <span class="siren-emoji anim-shake">🚨</span>
+      </div>
+
+      <h2 id="letter-alert-title" class="letter-alert-title">
+        I SAID DO NOT PRESS IT... BUT OF COURSE YOU DID! 😂🎀
+      </h2>
+      <p id="letter-alert-subtitle" class="letter-alert-subtitle">
+        Zero impulse control detected. But since your curiosity won, here is your letter...
+      </p>
+
+      <!-- The Letter Paper Card with Wax Seal & Ribbon -->
+      <div class="letter-paper-wrap">
+        <div class="letter-wax-seal">💌</div>
+        <h3 id="letter-to-heading" class="letter-to-heading">To My Favorite Troublemaker & Best Partner 💌</h3>
+        <div id="letter-body-content" class="letter-body-content">
+          <!-- Populated from CONFIG.forbiddenSection.letter.body -->
+        </div>
+        <div id="letter-signature" class="letter-signature">
+          Forever Your Favorite Partner in Crime ✨
+        </div>
+      </div>
+
+      <div class="letter-action-footer">
+        <button id="letter-forgive-btn" class="btn btn-primary anim-pulse">
+          Acknowledge My Chaos 🥺💖
+        </button>
+        <p class="letter-footer-hint">
+          (You can re-open this letter anytime by clicking the button!)
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="audio.js"></script>
+  <script src="confetti.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# Background Music
+You can place your favorite background song directly in this folder!
+Suggested filename: `music.mp3`
+
+If no `music.mp3` file is placed, the website automatically plays a soothing, cute pastel lo-fi ambient melody generated live in your browser using the Web Audio API synthesizer! 🎶✨

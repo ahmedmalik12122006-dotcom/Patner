@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bodyGrad" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#fff0f5"/>
+      <stop offset="60%" stop-color="#ffccd5"/>
+      <stop offset="100%" stop-color="#ffb3c1"/>
+    </radialGradient>
+    <linearGradient id="earGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff758f"/>
+      <stop offset="100%" stop-color="#ffb3c1"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#ff4d6d" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Mascot Body Group -->
+  <g filter="url(#softGlow)">
+    <!-- Left Ear -->
+    <ellipse cx="65" cy="55" rx="20" ry="38" transform="rotate(-18 65 55)" fill="url(#earGrad)" />
+    <ellipse cx="65" cy="55" rx="11" ry="24" transform="rotate(-18 65 55)" fill="#fff0f5" opacity="0.85" />
+
+    <!-- Right Ear -->
+    <ellipse cx="135" cy="55" rx="20" ry="38" transform="rotate(18 135 55)" fill="url(#earGrad)" />
+    <ellipse cx="135" cy="55" rx="11" ry="24" transform="rotate(18 135 55)" fill="#fff0f5" opacity="0.85" />
+
+    <!-- Head & Body -->
+    <circle cx="100" cy="115" r="68" fill="url(#bodyGrad)" />
+
+    <!-- Cheeks Blushing -->
+    <ellipse cx="60" cy="125" rx="14" ry="8" fill="#ff4d6d" opacity="0.45" />
+    <ellipse cx="140" cy="125" rx="14" ry="8" fill="#ff4d6d" opacity="0.45" />
+
+    <!-- Eyes (Big Sparkling Anime Eyes) -->
+    <!-- Left Eye -->
+    <circle cx="72" cy="110" r="10" fill="#2d0014" />
+    <circle cx="69" cy="107" r="4" fill="#ffffff" />
+    <circle cx="75" cy="113" r="2" fill="#ffffff" />
+    <!-- Eye Lashes -->
+    <path d="M 64 100 Q 72 95 80 100" stroke="#2d0014" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Right Eye -->
+    <circle cx="128" cy="110" r="10" fill="#2d0014" />
+    <circle cx="125" cy="107" r="4" fill="#ffffff" />
+    <circle cx="131" cy="113" r="2" fill="#ffffff" />
+    <!-- Eye Lashes -->
+    <path d="M 120 100 Q 128 95 136 100" stroke="#2d0014" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Cute Smiling Mouth -->
+    <path d="M 94 122 Q 100 126 106 122" stroke="#4a0e2e" stroke-width="3" stroke-linecap="round" fill="none" />
+    <path d="M 98 123 Q 100 132 102 123" fill="#ff4d6d" />
+
+    <!-- Cute Little Bow on Head -->
+    <g transform="translate(100, 52) scale(0.95)">
+      <!-- Left Knot -->
+      <path d="M 0 0 C -25 -20 -30 20 0 5 Z" fill="#ff4d6d" />
+      <path d="M 0 0 C -20 -15 -25 15 0 4 Z" fill="#ff758f" />
+      <!-- Right Knot -->
+      <path d="M 0 0 C 25 -20 30 20 0 5 Z" fill="#ff4d6d" />
+      <path d="M 0 0 C 20 -15 25 15 0 4 Z" fill="#ff758f" />
+      <!-- Center Ribbon -->
+      <circle cx="0" cy="2" r="6" fill="#fff" />
+      <circle cx="0" cy="2" r="4" fill="#ff4d6d" />
+      <!-- Ribbons Falling -->
+      <path d="M -4 5 C -10 20 -15 25 -12 30" stroke="#ff4d6d" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <path d="M 4 5 C 10 20 15 25 12 30" stroke="#ff4d6d" stroke-width="4" stroke-linecap="round" fill="none"/>
+    </g>
+
+    <!-- Sparkles near mascot -->
+    <path d="M 35 75 Q 40 75 40 70 Q 40 75 45 75 Q 40 75 40 80 Q 40 75 35 75 Z" fill="#ffd166" />
+    <path d="M 165 95 Q 170 95 170 90 Q 170 95 175 95 Q 170 95 170 100 Q 170 95 165 95 Z" fill="#ffd166" />
+  </g>
+</svg>
